@@ -13,7 +13,8 @@ import java.util.Locale;
 public class Catalogue implements I_Catalogue {
 	//SINGLETON
 	private static Catalogue instance;	
-	private ArrayList<I_Produit> _lesProduits = null; 
+	private ArrayList<I_Produit> _lesProduits = null;
+	private String nom;
 	
 	public synchronized static Catalogue getInstance()
 	{
@@ -22,7 +23,7 @@ public class Catalogue implements I_Catalogue {
 		return instance;
 	}
 	
-	protected Catalogue(){
+	protected Catalogue() {
 		this._lesProduits = new ArrayList<I_Produit>();
 	}
 	
