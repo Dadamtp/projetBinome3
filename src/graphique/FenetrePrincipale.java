@@ -15,9 +15,10 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 	private JButton btAchat;
 	private JButton btVente;
 	private JButton btQuitter;
+	private ctrlPrincipal controleur;
 	
-	public FenetrePrincipale() {
-		
+	public FenetrePrincipale(ctrlPrincipal controleur) {
+		this.controleur = controleur;
 		setTitle("exercice Produits");
 		setBounds(500, 500, 320, 250);
 		JPanel panAffichage = new JPanel();
@@ -64,29 +65,31 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 	}
 
 	public void actionPerformed(ActionEvent e) {
-
-/* tabProduits permet de tester le fonctionnement des fen�tres avec un tableau de noms de produits "en dur"
-   Quand l'application fonctionnera, il faudra bien s�r r�cup�rer les noms des produits dans le Catalogue */
-		
-/* M�me chose pour tabCategories (partie 4) */ 		
-//		String[] tabCategories = new String[] {"Bio", "Luxe" };
-		
+	
 		if (e.getSource() == btAfficher)
-			new FenetreAffichage(controleurStock.getStock());
+			new FenetreAffichage("Non implémenté.");
+			//new FenetreAffichage(controleur.getStock());
 		if (e.getSource() == btNouveauProduit)
-//			new FenetreNouveauProduit(tabCategories);
-			new FenetreNouveauProduit();
+//P4		new FenetreNouveauProduit(tabCategories);
+			
+			new FenetreAffichage("Non implémenté.");
+			//new FenetreNouveauProduit();
 		if (e.getSource() == btSupprimerProduit)
-			new FenetreSuppressionProduit();
+			//new FenetreSuppressionProduit();
+			new FenetreAffichage("Non implémenté");
+		
 //		if (e.getSource() == btNouvelleCategorie)
 //			new FenetreNouvelleCategorie();
 //		if (e.getSource() == btSupprimerCategorie)
 //			new FenetreSuppressionCategorie(tabCategories);
 		if (e.getSource() == btAchat)
-			new FenetreAchat();
+			new FenetreAffichage("Non implémenté.");
+			//new FenetreAchat();
 		if (e.getSource() == btVente)
-			new FenetreVente();
-		if (e.getSource() == btQuitter){
+			new FenetreAffichage("Non implémenté.");
+			//new FenetreVente();
+		if (e.getSource() == btQuitter) {
+			controleur.disconnect();
 			System.out.println("Au revoir");
 			System.exit(0);
 		}	
@@ -104,11 +107,4 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 	public void windowDeiconified(WindowEvent arg0) {}
 	public void windowIconified(WindowEvent arg0) {}
 	public void windowOpened(WindowEvent arg0) {}
-
-	
-	
-	/*public static void main(String[] args) {
-		new FenetrePrincipale();
-	}*/
-
 }

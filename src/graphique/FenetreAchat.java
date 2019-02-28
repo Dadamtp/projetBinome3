@@ -4,6 +4,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import controleur.ctrlAchat;
+import controleur.ctrlPrincipal;
 
 public class FenetreAchat extends JFrame implements ActionListener {
 
@@ -12,10 +13,8 @@ public class FenetreAchat extends JFrame implements ActionListener {
 	private JComboBox<String> combo;
 	private ctrlAchat controleurAchat;
 
-	public FenetreAchat() {
-
-		controleurAchat = new ctrlAchat();
-		
+	public FenetreAchat(ctrlPrincipal controleur) {
+	
 		setTitle("Achat");
 		setBounds(500, 500, 200, 125);
 		Container contentPane = getContentPane();

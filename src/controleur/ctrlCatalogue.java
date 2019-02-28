@@ -58,5 +58,14 @@ public class ctrlCatalogue {
 	public void addCatalogue(String nom) {
 		dao.create(new Catalogue(nom));
 	}
+
+	public void selectionnerCatalogue(String nomCatalogue) {
+		int i = 0;
+		
+		while (!nomCatalogue.equals(cats.get(i).getNom())) {
+			i++;
+		}
+		current = cats.get(i);
+	}
 	
 }

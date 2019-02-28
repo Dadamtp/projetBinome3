@@ -13,15 +13,15 @@ public class ctrlAchat {
 	}
 	
 	public  boolean acheterStock(String nomProduit, int qteAchetee) {
-		if (cat.acheterStock(nomProduit, qteAchetee)) {
+		/*if (cat.acheterStock(nomProduit, qteAchetee)) {
 			dao.update(cat.getProduitByName(nomProduit));
 			return true;
-		}
+		}*/
 		return false;
 	}
 	
 	public  boolean vendreStock(String nomProduit, int qteVendue) {
-		if (cat.vendreStock(nomProduit, qteVendue))
+		/*if (cat.vendreStock(nomProduit, qteVendue))
 		{
 			dao.update(cat.getProduitByName(nomProduit));
 			return true;
@@ -30,10 +30,13 @@ public class ctrlAchat {
 		{
 			new FenetreAffichage("Vente impossible, quantitée insuffisante");
 			return false;
-		}
+		}*/
+		return false;
 	}
+	
 	public String[] getStockInTab() {
-		return cat.getNomProduits();
+		//return cat.getNomProduits();
+		return null;
 	}
 	
 }

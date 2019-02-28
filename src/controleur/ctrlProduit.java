@@ -8,15 +8,14 @@ import ProduitDAO.ProduitDAOFactory;
 import factory.*;
 
 public class ctrlProduit {
-	private Catalogue cat = Catalogue.getInstance();
 	private I_ProduitDAO dao;
 	
-	public ctrlProduit() {
-		dao = ProduitDAOFactory.getInstance().createProduitDAOInterface();
+	public ctrlProduit(I_ProduitDAO _dao) {
+		dao = _dao;
 	}
 	
 	public  boolean addProduit(String nom, double prix, int qte) {
-		Produit p;
+		/*Produit p;
 		boolean ret = false;
 		if (cat.addProduit(nom, prix, qte))
 		{
@@ -28,20 +27,23 @@ public class ctrlProduit {
 		{
 			new FenetreAffichage("Cr�ation Impossible.");
 		}
-		return ret;
+		return ret;*/
+		return false;
 	}
 	
 	public  boolean removeProduit(String nom) {
-		boolean ret = false;
+		/*boolean ret = false;
 		if (cat.removeProduit(nom))
 		{
 			dao.delete(cat.getProduitByName(nom));
 			ret = true;
 		}
-		return ret;
+		return ret;*/
+		return false;
 	}
 
 	public  String[] getStockInTab() {
-		return cat.getNomProduits();
+		//return cat.getNomProduits();
+		return null;
 	}
 }

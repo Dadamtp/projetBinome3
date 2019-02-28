@@ -5,22 +5,18 @@ import ProduitDAO.ProduitDAOFactory;
 import metier.Catalogue;
 
 public class ctrlStock {
-	private Catalogue cat = Catalogue.getInstance();
 	private I_ProduitDAO dao;
 
-	public ctrlStock() {
-		dao = ProduitDAOFactory.getInstance().createProduitDAOInterface();
+	public ctrlStock(I_ProduitDAO _dao) {
+		dao = _dao;
 	}
 	
-	public String getStock() {
-		return cat.toString();
+	public String getStock(String nomCatalogue) {
+		//return dao.toString(nomCatalogue);
+		return null;
 	}
 
 	public void recupStock() {
-		cat.addProduits(dao.readAll());
-	}
-	
-	public void disconnect() {
-		dao.disconnect();
+		//cat.addProduits(dao.readAll());
 	}
 }
