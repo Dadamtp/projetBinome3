@@ -27,11 +27,14 @@ public class Connexion {
 		return instance;
 	}
 	
+	public Connection getConnection() {
+		return cn;
+	}
+	
 	public void Deconnexion() {
 		if (cn != null)
-			try {
-				cn.close();
-			} catch (SQLException e) {
+			try { cn.close(); }
+			catch (SQLException e) {
 				System.out.println("Deconnexion impossible.");
 				e.printStackTrace();
 			}

@@ -16,8 +16,6 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 	private JButton btVente;
 	private JButton btQuitter;
 	
-	private ctrlStock controleurStock;
-
 	public FenetrePrincipale() {
 		
 		setTitle("exercice Produits");
@@ -63,9 +61,6 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 		
 		addWindowListener(this);
 		setVisible(true);
-		
-		controleurStock = new ctrlStock();
-		controleurStock.recupStock();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -92,14 +87,13 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 		if (e.getSource() == btVente)
 			new FenetreVente();
 		if (e.getSource() == btQuitter){
-			controleurStock.disconnect();
 			System.out.println("Au revoir");
 			System.exit(0);
 		}	
 	}
 
 	public void windowClosing(WindowEvent arg0) {
-		controleurStock.disconnect();
+		controleur.disconnect();
 		System.out.println("Au revoir");
 		System.exit(0);
 	}
@@ -113,8 +107,8 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 
 	
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		new FenetrePrincipale();
-	}
+	}*/
 
 }

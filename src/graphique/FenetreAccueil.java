@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import controleur.ctrlPrincipal;
+
 public class FenetreAccueil extends JFrame implements ActionListener {
 
 	private JButton btAjouter, btSupprimer, btSelectionner;
@@ -11,8 +13,12 @@ public class FenetreAccueil extends JFrame implements ActionListener {
 	private JLabel lbNbCatalogues;
 	private JComboBox cmbSupprimer, cmbSelectionner;
 	private TextArea taDetailCatalogues;
+	private ctrlPrincipal controleur;
 
 	public FenetreAccueil() {
+		
+		controleur = new ctrlPrincipal();
+		
 		setTitle("Catalogues");
 		setBounds(500, 500, 200, 125);
 		Container contentPane = getContentPane();
@@ -76,11 +82,16 @@ public class FenetreAccueil extends JFrame implements ActionListener {
 		btSupprimer.addActionListener(this);
 		btSelectionner.addActionListener(this);
 		
-		String[] tab  = {"Formacia" , "Le Redoutable", "Noitaicossa"}; 
-		modifierListesCatalogues(tab);
-		String[] tab2 = {"Formacia : 6 produits" , "Le Redoutable : 4 produits" , "Noitaicossa : 0 produits" };
-		modifierDetailCatalogues(tab2);
-		modifierNbCatalogues(3);
+		//String[] tab  = {"Formacia" , "Le Redoutable", "Noitaicossa"}; 
+		//modifierListesCatalogues(tab);
+		//String[] tab2 = {"Formacia : 6 produits" , "Le Redoutable : 4 produits" , "Noitaicossa : 0 produits" };
+		//modifierDetailCatalogues(tab2);
+		//modifierNbCatalogues(3);
+		
+		
+		modifierListesCatalogues(controleur.recupCatalogues());
+		modifierDetailCatalogues(controleur.recupDetailsCatalogues());
+		modifierNbCatalogues(controleur.nbCatalogues());
 		setVisible(true);
 	}
 
@@ -90,6 +101,7 @@ public class FenetreAccueil extends JFrame implements ActionListener {
 			String texteAjout = txtAjouter.getText();
 			if (!texteAjout.equals(""))
 			{
+				controleur.addCatalogue(texteAjout);
 				System.out.println("ajouter le catalogue "+texteAjout);
 				txtAjouter.setText(null);
 			}

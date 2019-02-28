@@ -11,20 +11,12 @@ import java.util.List;
 import java.util.Locale;
 
 public class Catalogue implements I_Catalogue {
-	//SINGLETON
-	private static Catalogue instance;	
 	private ArrayList<I_Produit> _lesProduits = null;
 	private String nom;
 	
-	public synchronized static Catalogue getInstance()
-	{
-		if (instance == null)
-			instance = new Catalogue();
-		return instance;
-	}
-	
-	protected Catalogue() {
+	public Catalogue(String nom) {
 		this._lesProduits = new ArrayList<I_Produit>();
+		this.nom = nom;
 	}
 	
 	private boolean existInCatalogueByNom(ArrayList<I_Produit> l, String nom) {
@@ -138,6 +130,16 @@ public class Catalogue implements I_Catalogue {
 		}
 		montantTotalTTC = (double)Math.round(montantTotalTTC * 100) / 100;
 		return montantTotalTTC;
+	}
+	
+	@Override
+	public String getNomAndNbProduit() {
+		return nom + " " + _lesProduits.size();
+	}
+	
+	@Override
+	public String getNom() {
+		return nom;
 	}
 	
 	@Override

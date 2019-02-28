@@ -6,15 +6,17 @@ import java.util.List;
 
 import metier.I_Produit;
 import metier.Produit;
+import utils.Connexion;
 
 public class ProduitDAO implements I_ProduitDAO {
 	private PreparedStatement ps;
 	private CallableStatement cs;
 	private Statement st;
 	private ResultSet rs;
-
-
+	private Connection cn;
+	
 	public ProduitDAO() {
+		 cn = Connexion.getInstance().getConnection();
 	}
 	
 	@Override

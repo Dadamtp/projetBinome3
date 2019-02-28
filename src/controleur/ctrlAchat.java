@@ -6,11 +6,10 @@ import graphique.FenetreAffichage;
 import metier.Catalogue;
 
 public class ctrlAchat {
-	private Catalogue cat = Catalogue.getInstance();
 	private I_ProduitDAO dao;
 	
-	public ctrlAchat() {
-		dao = ProduitDAOFactory.getInstance().createProduitDAOInterface();
+	public ctrlAchat(I_ProduitDAO _dao) {
+		dao = _dao;
 	}
 	
 	public  boolean acheterStock(String nomProduit, int qteAchetee) {
@@ -37,7 +36,4 @@ public class ctrlAchat {
 		return cat.getNomProduits();
 	}
 	
-	public void disconnect() {
-		dao.disconnect();
-	}
 }

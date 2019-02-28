@@ -1,10 +1,7 @@
-/controleur/
-/dao/
-/graphique/
-/metier/
-/utils/
-/ProduitDAO/
-/CatalogueDAO/
-/DAL/
-/Factory/
 /factory/
+/CatalogueDAO/
+/utils/
+/graphique/
+/controleur/
+/metier/
+/ProduitDAO/

@@ -37,9 +37,4 @@ public class AdaptateurProduitDAO_XML implements I_ProduitDAO {
 		return xmlDao.lireTous();
 	}
 
-	@Override
-	public void disconnect() {
-		
-	}
-	
 }

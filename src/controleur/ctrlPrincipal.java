@@ -1,13 +1,25 @@
 package controleur;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import CatalogueDAO.I_CatalogueDAO;
+import factory.FactoryCatalogueProduit;
+import factory.FactoryRelationelle;
+import metier.I_Catalogue;
+
 public class ctrlPrincipal {
 	
 	private ctrlAchat controleurAchat;
 	private ctrlProduit controleurProduit;
 	private ctrlStock controleurStock;
+	private ctrlCatalogue controleurCatalogue;
+	
+	private FactoryCatalogueProduit factory;
 	
 	public ctrlPrincipal() {
-		
+		factory = FactoryCatalogueProduit.getInstance();
+		controleurCatalogue = new ctrlCatalogue(factory.createCatalogueDAO());
 	}
 	
 	//controleurStock
@@ -37,7 +49,24 @@ public class ctrlPrincipal {
 		return true;
 	}
 	
+	//controleurCatalogues
+	public int nbCatalogues() {
+		return controleurCatalogue.nbCatalogues();
+	}
+	
+	public String[] recupDetailsCatalogues() {
+		return controleurCatalogue.recupDetailsCatalogues();
+	}
+	
+	public String[] recupCatalogues() {
+		return controleurCatalogue.recupCatalogues();
+	}
+	
 	public void disconnect() {
 		
+	}
+
+	public void addCatalogue(String nom) {
+		controleurCatalogue.addCatalogue(nom);
 	}
 }

@@ -1,22 +1,20 @@
 package factory;
 
+import CatalogueDAO.I_CatalogueDAO;
+import ProduitDAO.I_ProduitDAO;
+
 public abstract class FactoryCatalogueProduit {
 	private static FactoryCatalogueProduit instance;
 	
 	public FactoryCatalogueProduit() { }
 	
-	public FactoryCatalogueProduit getInstance() {
+	public static FactoryCatalogueProduit getInstance() {
 		if (instance == null) {
-			instance = new ;
+			instance = new FactoryRelationelle();
 		}
 		return instance;
 	}
 	
-	public FactoryCatalogueProduit createProduitDAO() {
-		return new ProduitDAO();
-	}
-	
-	public FactoryCatalogueProduit createCatalogueDAO() {
-		return new CatalogueDAO();
-	}
+	public abstract I_ProduitDAO createProduitDAO();
+	public abstract I_CatalogueDAO createCatalogueDAO();
 }
