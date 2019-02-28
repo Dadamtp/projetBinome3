@@ -1,6 +1,7 @@
-package dao;
+package ProduitDAO;
 
 import java.util.List;
+
 import metier.I_Produit;
 
 public class AdaptateurProduitDAO_XML implements I_ProduitDAO {

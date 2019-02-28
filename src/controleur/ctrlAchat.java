@@ -1,8 +1,8 @@
 package controleur;
 
+import ProduitDAO.I_ProduitDAO;
+import ProduitDAO.ProduitDAOFactory;
 import graphique.FenetreAffichage;
-import dao.I_ProduitDAO;
-import dao.ProduitDAOFactory;
 import metier.Catalogue;
 
 public class ctrlAchat {

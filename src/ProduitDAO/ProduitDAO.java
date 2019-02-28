@@ -1,4 +1,4 @@
-package dao;
+package ProduitDAO;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,20 +12,9 @@ public class ProduitDAO implements I_ProduitDAO {
 	private CallableStatement cs;
 	private Statement st;
 	private ResultSet rs;
-	private Connection cn;
+
 
 	public ProduitDAO() {
-		
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			//cn = DriverManager.getConnection("jdbc:oracle:thin:@gloin:1521:iut", "perezd", "123");
-			cn = DriverManager.getConnection("jdbc:oracle:thin:@162.38.222.149:1521:iut", "perezd", "123");
-			
-		}
-		catch (ClassNotFoundException | SQLException e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-		}
 	}
 	
 	@Override
@@ -136,18 +125,5 @@ public class ProduitDAO implements I_ProduitDAO {
 		}
 		
 		return l;
-	}
-	
-	public void disconnect() {
-		try {
-			if (cn != null)
-				cn.close();
-			System.out.println("Déconnexion");
-		}
-		catch (SQLException e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-		}
-		
-	}
+	}	
 }

@@ -28,6 +28,14 @@ public class ctrlPrincipal {
 		return false;
 	}
 	
+	//controleurAchat
+	public boolean acheterStock(String nomProduit, int qteAchetee) {
+		return true;
+	}
+	
+	public boolean vendreStock(String nomProduit, int qteVendue) {
+		return true;
+	}
 	
 	public void disconnect() {
 		

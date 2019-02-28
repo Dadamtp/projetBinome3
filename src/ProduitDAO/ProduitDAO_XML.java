@@ -1,4 +1,4 @@
-package dao;
+package ProduitDAO;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;

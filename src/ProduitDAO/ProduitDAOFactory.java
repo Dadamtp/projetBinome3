@@ -1,8 +1,6 @@
-package dao;
+package ProduitDAO;
 
 public class ProduitDAOFactory {
-	
-	private static ProduitDAOFactory instance;
 	
 	protected ProduitDAOFactory() { }
 	
@@ -11,9 +9,4 @@ public class ProduitDAOFactory {
 		//return new AdaptateurProduitDAO_XML();
 	}
 	
-	public static ProduitDAOFactory getInstance() {
-		if (instance == null) 
-			instance = new ProduitDAOFactory();
-		return instance;
-	}
 }

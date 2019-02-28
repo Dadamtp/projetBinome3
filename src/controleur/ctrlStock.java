@@ -1,7 +1,7 @@
 package controleur;
 
-import dao.I_ProduitDAO;
-import dao.ProduitDAOFactory;
+import ProduitDAO.I_ProduitDAO;
+import ProduitDAO.ProduitDAOFactory;
 import metier.Catalogue;
 
 public class ctrlStock {

@@ -3,7 +3,9 @@ package controleur;
 import graphique.FenetreAffichage;
 import metier.Catalogue;
 import metier.Produit;
-import dao.*;
+import ProduitDAO.I_ProduitDAO;
+import ProduitDAO.ProduitDAOFactory;
+import factory.*;
 
 public class ctrlProduit {
 	private Catalogue cat = Catalogue.getInstance();
@@ -24,7 +26,7 @@ public class ctrlProduit {
 		}
 		else
 		{
-			new FenetreAffichage("Création Impossible.");
+			new FenetreAffichage("Crï¿½ation Impossible.");
 		}
 		return ret;
 	}
